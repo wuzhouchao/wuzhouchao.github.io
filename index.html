@@ -68,10 +68,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-优雅降级和渐进增强" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-浏览器内核" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/" class="article-date">
-  <time datetime="2020-07-02T16:45:24.148Z" itemprop="datePublished">2020-07-03</time>
+    <a href="/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/" class="article-date">
+  <time datetime="2020-07-02T16:52:15.619Z" itemprop="datePublished">2020-07-03</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/">优雅降级和渐进增强</a>
+      <a class="article-title" href="/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/">浏览器内核</a>
     </h1>
   
 
@@ -90,15 +90,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="优雅降级和渐进增强"><a href="#优雅降级和渐进增强" class="headerlink" title="优雅降级和渐进增强"></a>优雅降级和渐进增强</h1><p>什么是渐进增强（progressive enhancement）、优雅降级（graceful degradation）呢？</p>
-<h4 id="渐进增强-progressive-enhancement："><a href="#渐进增强-progressive-enhancement：" class="headerlink" title="渐进增强 progressive enhancement："></a>渐进增强 progressive enhancement：</h4><p>针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
-<h4 id="优雅降级-graceful-degradation："><a href="#优雅降级-graceful-degradation：" class="headerlink" title="优雅降级 graceful degradation："></a>优雅降级 graceful degradation：</h4><p>一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p><strong>区别：渐进增强是向上兼容，优雅降级是向下兼容。</strong></p>
+        <p>(此处转载  简书 沉落的星星)</p>
+<h2 id="概念-简述"><a href="#概念-简述" class="headerlink" title="概念/简述"></a>概念/简述</h2><p><strong>浏览器内核可以分为两部分</strong>：<strong>一部分是渲染引擎（render engineer或layout engineer)</strong>，<strong>负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，生成DOM树,render，repaint这些工作，然后会输出至显示器或打印机</strong>。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要此内核。<strong>另一部分是JS引擎，***</strong>负责解析 Javascript 语言，执行 javascript 语言来实现网页的动态效果。****</p>
+<p><strong>常见的浏览器内核可以分这五种：Trident、Gecko、Webkit、Chromium、Presto。</strong></p>
+<h3 id="Trident"><a href="#Trident" class="headerlink" title="Trident"></a>Trident</h3><p>Trident是IE的内核，也就是国内双核浏览器的内核之一，又称为IE内核或MSHTML，此内核只能用于Windows平台，且不是开源的。Trident内核一直延续到IE11,IE11的后继者Edge采用了新内核EdgeHTML。代表作品还有腾讯、Maxthon（遨游）、360浏览器等。但由于市场份额比较大，曾经出现脱离了W3C标准的时候，同时IE版本比较多，存在很多的兼容性问题。</p>
+<h3 id="Gecko"><a href="#Gecko" class="headerlink" title="Gecko"></a>Gecko</h3><p>Gecko是Netscape6Z开始采用的内核，是一个开源内核,后来被FF（FireFox）采用，因火狐是最多的用户，故常被称为firefox内核它是开源的，最大优势是跨平台，在Microsoft Windows、Linux、MacOs X等主要操作系统中使用。</p>
+<h3 id="Webkit"><a href="#Webkit" class="headerlink" title="Webkit"></a>Webkit</h3><p>Webkeit的鼻祖是Safari, 其前身是KDE(Linux的桌面系统)的KHTML（开源的）。Webkit也是开源的。曾经的Chrome用的是Webkeit。注意：Webkit其实包括是渲染引擎Webcore(前身是KHTML),以及JS引擎JSCore。</p>
+<h3 id="Chromium（Blink，v8）"><a href="#Chromium（Blink，v8）" class="headerlink" title="Chromium（Blink，v8）"></a>Chromium（Blink，v8）</h3><p>chromium fork自webkit，代码可读性和编译速度得到提升。值得一提是谷歌专门研发了自己的JS引擎——V8，极大地提高了JS的运算速度。由于chromium也是开源的，所以搜狗、QQ、360都用chromium内核。自13年4月后，谷歌开始在Chromium项目中研发Blink渲染引擎，之前一直用的是Webkit的渲染引擎。之所以研发独立的渲染引擎，是因为苹果推出的Webkit2与chromium的设计存在冲突，影响了chromium的架构移植工作。Blink内核是由Google和Opera Software开发的浏览器排版引擎，2013年4月发布。现在Chrome内核是Blink。</p>
+<h3 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h3><p>Presto是由Opera Software开发的浏览器排版引擎，它是世界公认最快的渲染速度的引擎，Opera7.0开始使用。13年2月后为了减少研发成本，Opera放弃Presto宣布加入谷歌阵营，采用chromium,之后也紧跟Blink的脚步。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/" data-id="ckc50ubvf00011hji7fe2elpn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/" data-id="ckc511va200028lji8ojx0vyn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -111,7 +115,7 @@
     <article id="post-BFC" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/03/BFC/" class="article-date">
-  <time datetime="2020-07-02T16:43:41.087Z" itemprop="datePublished">2020-07-03</time>
+  <time datetime="2020-07-02T16:52:10.257Z" itemprop="datePublished">2020-07-03</time>
 </a>
     
   </div>
@@ -130,7 +134,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h1><h3 id="BFC-块级格式化上下文-Block-formatting-contex"><a href="#BFC-块级格式化上下文-Block-formatting-contex" class="headerlink" title="BFC(块级格式化上下文)(Block formatting contex)"></a>BFC(块级格式化上下文)(Block formatting contex)</h3><h4 id="概念-介绍"><a href="#概念-介绍" class="headerlink" title="概念/介绍"></a>概念/介绍</h4><p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。包括浮动，和外边距合并等等，因此，有了这个特性，我们布局的时候就不会出现意外情况了。</p>
+        <h3 id="BFC-块级格式化上下文-Block-formatting-contex"><a href="#BFC-块级格式化上下文-Block-formatting-contex" class="headerlink" title="BFC(块级格式化上下文)(Block formatting contex)"></a>BFC(块级格式化上下文)(Block formatting contex)</h3><h4 id="概念-介绍"><a href="#概念-介绍" class="headerlink" title="概念/介绍"></a>概念/介绍</h4><p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。包括浮动，和外边距合并等等，因此，有了这个特性，我们布局的时候就不会出现意外情况了。</p>
 <h4 id="触发bfc条件"><a href="#触发bfc条件" class="headerlink" title="触发bfc条件"></a>触发bfc条件</h4><p>display 属性为 block, list-item, table 的元素，会产生BFC.</p>
 <p>-float属性不为none</p>
 <p>-position为absolute或fixed</p>
@@ -150,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/03/BFC/" data-id="ckc50ubv600001hji12ujfwa5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/03/BFC/" data-id="ckc511v9o00008lji3rd3fgg5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,10 +164,10 @@
 
 
   
-    <article id="post-浏览器内核" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-优雅降级和渐进增强" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/" class="article-date">
-  <time datetime="2020-07-02T16:33:48.740Z" itemprop="datePublished">2020-07-03</time>
+    <a href="/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/" class="article-date">
+  <time datetime="2020-07-02T16:52:05.295Z" itemprop="datePublished">2020-07-03</time>
 </a>
     
   </div>
@@ -174,7 +178,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/">浏览器内核</a>
+      <a class="article-title" href="/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/">优雅降级和渐进增强</a>
     </h1>
   
 
@@ -182,19 +186,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="五大浏览器内核"><a href="#五大浏览器内核" class="headerlink" title="五大浏览器内核"></a>五大浏览器内核</h1><p>(此处转载  简书 沉落的星星)</p>
-<h2 id="概念-简述"><a href="#概念-简述" class="headerlink" title="概念/简述"></a>概念/简述</h2><p><strong>浏览器内核可以分为两部分</strong>：<strong>一部分是渲染引擎（render engineer或layout engineer)</strong>，<strong>负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，生成DOM树,render，repaint这些工作，然后会输出至显示器或打印机</strong>。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要此内核。<strong>另一部分是JS引擎，***</strong>负责解析 Javascript 语言，执行 javascript 语言来实现网页的动态效果。****</p>
-<p><strong>常见的浏览器内核可以分这五种：Trident、Gecko、Webkit、Chromium、Presto。</strong></p>
-<h3 id="Trident"><a href="#Trident" class="headerlink" title="Trident"></a>Trident</h3><p>Trident是IE的内核，也就是国内双核浏览器的内核之一，又称为IE内核或MSHTML，此内核只能用于Windows平台，且不是开源的。Trident内核一直延续到IE11,IE11的后继者Edge采用了新内核EdgeHTML。代表作品还有腾讯、Maxthon（遨游）、360浏览器等。但由于市场份额比较大，曾经出现脱离了W3C标准的时候，同时IE版本比较多，存在很多的兼容性问题。</p>
-<h3 id="Gecko"><a href="#Gecko" class="headerlink" title="Gecko"></a>Gecko</h3><p>Gecko是Netscape6Z开始采用的内核，是一个开源内核,后来被FF（FireFox）采用，因火狐是最多的用户，故常被称为firefox内核它是开源的，最大优势是跨平台，在Microsoft Windows、Linux、MacOs X等主要操作系统中使用。</p>
-<h3 id="Webkit"><a href="#Webkit" class="headerlink" title="Webkit"></a>Webkit</h3><p>Webkeit的鼻祖是Safari, 其前身是KDE(Linux的桌面系统)的KHTML（开源的）。Webkit也是开源的。曾经的Chrome用的是Webkeit。注意：Webkit其实包括是渲染引擎Webcore(前身是KHTML),以及JS引擎JSCore。</p>
-<h3 id="Chromium（Blink，v8）"><a href="#Chromium（Blink，v8）" class="headerlink" title="Chromium（Blink，v8）"></a>Chromium（Blink，v8）</h3><p>chromium fork自webkit，代码可读性和编译速度得到提升。值得一提是谷歌专门研发了自己的JS引擎——V8，极大地提高了JS的运算速度。由于chromium也是开源的，所以搜狗、QQ、360都用chromium内核。自13年4月后，谷歌开始在Chromium项目中研发Blink渲染引擎，之前一直用的是Webkit的渲染引擎。之所以研发独立的渲染引擎，是因为苹果推出的Webkit2与chromium的设计存在冲突，影响了chromium的架构移植工作。Blink内核是由Google和Opera Software开发的浏览器排版引擎，2013年4月发布。现在Chrome内核是Blink。</p>
-<h3 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h3><p>Presto是由Opera Software开发的浏览器排版引擎，它是世界公认最快的渲染速度的引擎，Opera7.0开始使用。13年2月后为了减少研发成本，Opera放弃Presto宣布加入谷歌阵营，采用chromium,之后也紧跟Blink的脚步。</p>
+        <p>什么是渐进增强（progressive enhancement）、优雅降级（graceful degradation）呢？</p>
+<h4 id="渐进增强-progressive-enhancement："><a href="#渐进增强-progressive-enhancement：" class="headerlink" title="渐进增强 progressive enhancement："></a>渐进增强 progressive enhancement：</h4><p>针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<h4 id="优雅降级-graceful-degradation："><a href="#优雅降级-graceful-degradation：" class="headerlink" title="优雅降级 graceful degradation："></a>优雅降级 graceful degradation：</h4><p>一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p><strong>区别：渐进增强是向上兼容，优雅降级是向下兼容。</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/" data-id="ckc50ubvj00021hji3spc6lh6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/" data-id="ckc511v9z00018ljiaic803rc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -235,7 +235,7 @@
       <ul>
         
           <li>
-            <a href="/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/">优雅降级和渐进增强</a>
+            <a href="/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/">浏览器内核</a>
           </li>
         
           <li>
@@ -243,7 +243,7 @@
           </li>
         
           <li>
-            <a href="/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/">浏览器内核</a>
+            <a href="/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/">优雅降级和渐进增强</a>
           </li>
         
       </ul>
