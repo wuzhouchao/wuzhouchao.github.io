@@ -5,17 +5,17 @@
   
 
   
-  <title>myFirstBlog | 吴超的技术博客</title>
+  <title>优雅降级和渐进增强 | 吴超的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="全等&#x2F;不全等（相等&#x2F;不相等）相等和不相等操作符存在类型转换问题，而为了保证数据的完整性，我们一般使用全等和不全等操作符 函数参数ECMAScript中也没有函数签名的概念，因为其函数参数是以一个包含多个零或多个值的数组的形式传递的。 可以向ECMAScript函数传递任意数量的参数，并且可以通过arguments对象来访问这些参数 argument是对象是个类数组（但是并不是Array的实例） 变">
+  <meta name="description" content="优雅降级和渐进增强什么是渐进增强（progressive enhancement）、优雅降级（graceful degradation）呢？ 渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。 优雅降级 graceful degradation：一开始就构建完整的功能，然后">
 <meta property="og:type" content="article">
-<meta property="og:title" content="myFirstBlog">
-<meta property="og:url" content="http://yoursite.com/2020/06/29/myFirstBlog/index.html">
+<meta property="og:title" content="优雅降级和渐进增强">
+<meta property="og:url" content="http://yoursite.com/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/index.html">
 <meta property="og:site_name" content="吴超的技术博客">
-<meta property="og:description" content="全等&#x2F;不全等（相等&#x2F;不相等）相等和不相等操作符存在类型转换问题，而为了保证数据的完整性，我们一般使用全等和不全等操作符 函数参数ECMAScript中也没有函数签名的概念，因为其函数参数是以一个包含多个零或多个值的数组的形式传递的。 可以向ECMAScript函数传递任意数量的参数，并且可以通过arguments对象来访问这些参数 argument是对象是个类数组（但是并不是Array的实例） 变">
+<meta property="og:description" content="优雅降级和渐进增强什么是渐进增强（progressive enhancement）、优雅降级（graceful degradation）呢？ 渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。 优雅降级 graceful degradation：一开始就构建完整的功能，然后">
 <meta property="og:locale" content="中文">
-<meta property="article:published_time" content="2020-06-29T11:14:59.181Z">
-<meta property="article:modified_time" content="2020-06-29T11:14:59.182Z">
+<meta property="article:published_time" content="2020-07-02T16:45:24.148Z">
+<meta property="article:modified_time" content="2020-07-02T16:45:24.148Z">
 <meta property="article:author" content="吴超">
 <meta name="twitter:card" content="summary">
   
@@ -70,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-myFirstBlog" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-优雅降级和渐进增强" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/06/29/myFirstBlog/" class="article-date">
-  <time datetime="2020-06-29T11:14:59.181Z" itemprop="datePublished">2020-06-29</time>
+    <a href="/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/" class="article-date">
+  <time datetime="2020-07-02T16:45:24.148Z" itemprop="datePublished">2020-07-03</time>
 </a>
     
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      myFirstBlog
+      优雅降级和渐进增强
     </h1>
   
 
@@ -92,18 +92,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="全等-不全等（相等-不相等）"><a href="#全等-不全等（相等-不相等）" class="headerlink" title="全等/不全等（相等/不相等）"></a>全等/不全等（相等/不相等）</h3><p>相等和不相等操作符存在类型转换问题，而为了保证数据的完整性，我们一般使用全等和不全等操作符</p>
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p><code>ECMAScript</code>中也没有函数签名的概念，因为其函数参数是以一个包含多个零或多个值的数组的形式传递的。</p>
-<p>可以向<code>ECMAScript</code>函数传递任意数量的参数，并且可以通过arguments对象来访问这些参数</p>
-<p>argument是对象是个类数组（但是并不是Array的实例）</p>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p><code>ECMAScript</code>变量可能包含两种不同的数据类型的值，一种是基本数据类型，另一种是引用数据类型</p>
-<p>基本数据类型： symbol  string number null undefined Boolean；</p>
-<p>引用数据类型： object</p>
+        <h1 id="优雅降级和渐进增强"><a href="#优雅降级和渐进增强" class="headerlink" title="优雅降级和渐进增强"></a>优雅降级和渐进增强</h1><p>什么是渐进增强（progressive enhancement）、优雅降级（graceful degradation）呢？</p>
+<h4 id="渐进增强-progressive-enhancement："><a href="#渐进增强-progressive-enhancement：" class="headerlink" title="渐进增强 progressive enhancement："></a>渐进增强 progressive enhancement：</h4><p>针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<h4 id="优雅降级-graceful-degradation："><a href="#优雅降级-graceful-degradation：" class="headerlink" title="优雅降级 graceful degradation："></a>优雅降级 graceful degradation：</h4><p>一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p><strong>区别：渐进增强是向上兼容，优雅降级是向下兼容。</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/29/myFirstBlog/" data-id="ckc44d6cl0001cxer1knk5yh2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/" data-id="ckc50ubvf00011hji7fe2elpn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -113,9 +110,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/06/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/07/03/BFC/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">BFC</div>
     </a>
   
 </nav>
@@ -139,7 +136,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
     </div>
   </div>
 
@@ -152,15 +149,15 @@
       <ul>
         
           <li>
-            <a href="/2020/06/29/myFirstBlog/">myFirstBlog</a>
+            <a href="/2020/07/03/%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E5%92%8C%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA/">优雅降级和渐进增强</a>
           </li>
         
           <li>
-            <a href="/2020/06/29/hello-world/">Hello World</a>
+            <a href="/2020/07/03/BFC/">BFC</a>
           </li>
         
           <li>
-            <a href="/2020/06/06/%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/">控制结构</a>
+            <a href="/2020/07/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/">浏览器内核</a>
           </li>
         
       </ul>
